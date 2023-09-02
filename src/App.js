@@ -1,5 +1,6 @@
 import "./styles.css";
-import ExpenseItem from "./Components/Expenses/ExpenseItem.js";
+
+import Expenses from "./Components/Expenses/Expenses.js";
 
 export default function App() {
   const expenses = [
@@ -25,10 +26,10 @@ export default function App() {
   ];
 
   return (
-    <ExpenseItem
-      title={expenses[0].title}
-      amount={expenses[0].amount}
-      date={expenses[0].date}
-    ></ExpenseItem>
+    <div>
+     
+      <Expenses items={expenses} />
+    </div>
   );
+
 }
