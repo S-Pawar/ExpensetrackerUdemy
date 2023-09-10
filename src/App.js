@@ -1,7 +1,7 @@
 import "./styles.css";
 
 import Expenses from "./Components/Expenses/Expenses.js";
-
+import NewExpense from "./Components/Expenses/NewExpense.js";
 export default function App() {
   const expenses = [
     {
@@ -24,10 +24,13 @@ export default function App() {
       date: new Date(2021, 5, 12)
     }
   ];
-
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  };
   return (
     <div>
-     
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses} />
     </div>
   );

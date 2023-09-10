@@ -1,9 +1,22 @@
 import "./Expenses.css";
 import ExpenseItem from './ExpenseItem';
-
+import ExpensesFilter from './ExpensesFilter';
+import React, { useState } from 'react';
 const Expenses = (props) => {
+const [dropDownVal,SetDropDownVal]= useState('2022');
+const DropDownFilter=(selectedVal)=>{
+
+  SetDropDownVal(selectedVal);
+  console.log(dropDownVal);
+
+}
+
+
     return (
+      
+        
       <div className="expenses">
+         <ExpensesFilter onChangeDropDown={DropDownFilter}/>
         <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
@@ -24,7 +37,7 @@ const Expenses = (props) => {
           amount={props.items[3].amount}
           date={props.items[3].date}
         />
-        
+       
       </div>
       
       
