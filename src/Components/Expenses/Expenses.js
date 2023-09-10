@@ -5,18 +5,12 @@ import React, { useState } from 'react';
 const Expenses = (props) => {
 const [dropDownVal,SetDropDownVal]= useState('2022');
 const DropDownFilter=(selectedVal)=>{
-
   SetDropDownVal(selectedVal);
   console.log(dropDownVal);
-
 }
-
-
-    return (
-      
-        
+   return (     
       <div className="expenses">
-         <ExpensesFilter onChangeDropDown={DropDownFilter}/>
+         <ExpensesFilter selected={dropDownVal} onChangeDropDown={DropDownFilter}/>
         <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
