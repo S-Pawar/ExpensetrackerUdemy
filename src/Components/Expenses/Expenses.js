@@ -8,18 +8,22 @@ const DropDownFilter=(selectedVal)=>{
 
   SetDropDownVal(selectedVal);
   console.log(dropDownVal);
-
+ 
 }
 
+const filteredYear = props.items.filter(expense => {
+  return expense.date.getFullYear().toString() === dropDownVal;
+});
 
     return (
       
         
       <div className="expenses">
          <ExpensesFilter onChangeDropDown={DropDownFilter}/>
-         {props.items.map(expense =>
+         {
+         filteredYear.map(expense =>
           <ExpenseItem
-          key={expense.key}
+          key={expense.id}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
