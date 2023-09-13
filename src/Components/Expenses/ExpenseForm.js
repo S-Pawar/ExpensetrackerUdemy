@@ -22,7 +22,7 @@ function onSubmitHandler(event){
     const expenseData={
         title: titleValue,
         amount: amountValue,
-        date:dateValue,
+        date:new Date(dateValue),
 
     }
 
