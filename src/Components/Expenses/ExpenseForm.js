@@ -17,11 +17,15 @@ const ExpenseForm = (props) => {
 
   function onSubmitHandler(event) {
     event.preventDefault();
-    const expenseData = {
-      title: titleValue,
-      amount: amountValue,
-      date: new Date(dateValue),
-    };
+
+    const expenseData={
+        title: titleValue,
+        amount: +amountValue,
+        date:new Date(dateValue),
+
+    }
+
+
 
     SetTitleValue("");
     SetamountValue("");
