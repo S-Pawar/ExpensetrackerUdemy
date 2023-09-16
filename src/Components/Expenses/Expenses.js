@@ -1,6 +1,7 @@
 import "./Expenses.css";
 import ExpenseItem from './ExpenseItem';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesList from './ExpensesList';
 import React, { useState } from 'react';
 const Expenses = (props) => {
 const [dropDownVal,SetDropDownVal]= useState('2022');
@@ -11,7 +12,7 @@ const DropDownFilter=(selectedVal)=>{
  
 }
 
-const filteredYear = props.items.filter(expense => {
+const filteredListYear = props.items.filter(expense => {
   return expense.date.getFullYear().toString() === dropDownVal;
 });
 
@@ -20,15 +21,7 @@ const filteredYear = props.items.filter(expense => {
         
       <div className="expenses">
          <ExpensesFilter onChangeDropDown={DropDownFilter}/>
-         {
-         filteredYear.map(expense =>
-          <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-          )}
+     <ExpensesList items={filteredListYear} />
      
       </div>
       

@@ -3,6 +3,7 @@ import ExpenseDate from "./ExpenseDate.js";
 
 const ExpenseItem = (props) => {
   return (
+    <li>
     <div className="expense-item">
       <div>
         <ExpenseDate date={props.date}></ExpenseDate>
@@ -13,6 +14,7 @@ const ExpenseItem = (props) => {
         <div className="expense-item__price">${props.amount}</div>
       </div>
     </div>
+     </li>
   );
 };
 
